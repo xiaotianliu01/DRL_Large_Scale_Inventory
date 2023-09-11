@@ -15,5 +15,9 @@ Here
 --env-name : name for supply chain model, ''single_echelon'' or ''multi_echelon''
 --log-dir : path for training logs
 --save-dir : path for saved models
---sku-mini-batch : number 
+--sku-mini-batch : number of SKUs that are processed in a batch
+--num-processes : number of processes to parrelly simulate supply chain models for multiple SKUs
+--train-demand-data-pth : path for demand data
+--train-vlt-data-pth : path for vlt data
 ```
+Note params *sku-mini-batch* and *num-processes* come from the parrel deisign in the codes which are meant to improve the code effeciency with a large volume of SKUs. You have to make sure that **sku-mini-batch*num-processes>=number of total SKUs in your dataset**. Otherwise, some of your SKUs may not be used during training.
